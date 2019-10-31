@@ -14,7 +14,7 @@ app.post('/', (req, res) => {
     const addUser = req.body;
     const id = uuidv5('https://shrouded-temple-77848.herokuapp.com/', uuidv5.URL)
     addUser.userId = id
-    return admin.database().ref('/users').push(entry)
+    return admin.database().ref('/users').push(addUser)
     .then(() => {
         return res.status(200).send(addUser)
     }).catch(error => {
